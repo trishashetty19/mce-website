@@ -17,12 +17,12 @@ body {
     --primary: 218 75% 30%;
     --primary-foreground: 0 0% 100%;
     --secondary: 213 44% 57%;
-    --secondary-foreground: 218 75% 30%;
-    --muted: 218 35% 45%;
-    --muted-foreground: 0 0% 80%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 358 78% 50%;
+    --secondary-foreground: 218 75% 100%;
+    --muted: 218 20% 88%;
+    --muted-foreground: 218 40% 20%;
+    --accent: 220 90% 85%;
+    --accent-foreground: 220 40% 15%;
+    --destructive: 358 60% 50%;
     --destructive-foreground: 0 0% 98%;
     --border: 213 44% 57%;
     --input: 0 0% 89.8%;
@@ -35,30 +35,41 @@ body {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 0 0% 100%;
-    --foreground: 218 75% 30%;
-    --card: 208 44% 86%;
-    --card-foreground: 218 75% 30%;
-    --popover: 218 75% 30%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 218 75% 30%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 213 44% 57%;
-    --secondary-foreground: 218 75% 30%;
-    --muted: 218 35% 45%;
-    --muted-foreground: 0 0% 80%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 358 78% 50%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 213 44% 57%;
-    --input: 0 0% 14.9%;
-    --ring: 213 44% 57%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --background: 220 15% 10%; /* Dark, neutral background */
+    --foreground: 0 0% 90%; /* Light foreground text */
+
+    --card: 220 15% 15%; /* Slightly lighter than background for card elements */
+    --card-foreground: 0 0% 85%; /* Softer light text for cards */
+
+    --popover: 220 15% 15%; /* Same as card background */
+    --popover-foreground: 0 0% 85%; /* Softer light text for popovers */
+
+    --primary: 218 80% 50%; /* Vibrant primary color */
+    --primary-foreground: 0 0% 98%; /* Almost white for text on primary */
+
+    --secondary: 218 30% 40%; /* Muted blue-gray secondary */
+    --secondary-foreground: 0 0% 90%; /* Light gray for text on secondary */
+
+    --muted: 220 10% 20%; /* Dark muted background */
+    --muted-foreground: 0 0% 70%; /* Soft, light-muted text */
+
+    --accent: 210 90% 40%; /* Bright accent color */
+    --accent-foreground: 0 0% 95%; /* Almost white for text on accent */
+
+    --destructive: 0 70% 50%; /* Strong red for destructive actions */
+    --destructive-foreground: 0 0% 95%; /* Almost white for text on destructive */
+
+    --border: 220 10% 30%; /* Subtle border color */
+    --input: 220 10% 25%; /* Input background */
+    --ring: 218 80% 50%; /* Highlight ring for focus states */
+
+    --chart-1: 12 70% 50%; /* Vibrant red for charts */
+    --chart-2: 173 60% 40%; /* Greenish-blue for variety */
+    --chart-3: 197 50% 30%; /* Deep blue for charts */
+    --chart-4: 43 80% 50%; /* Vibrant yellow-green */
+    --chart-5: 27 85% 50%; /* Warm orange for charts */
+
+    --radius: 0.5rem; /* No change */
   }
 }
 
