@@ -1,22 +1,44 @@
-import type { Metadata } from "next";
+'use client';
+
 import { Inter } from "next/font/google";
 import "./globals.css";
+import DesktopNavbar from "./components/desktop-navbar";
+import MobileNavbar from "./components/mobile-navbar";
+import { useEffect, useState } from "react";
+import { metadata } from "./head";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "MCE",
-  description: "Manipal Career Education",
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  
+  const title = String(metadata.title ?? "Default Title");
+
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <head>
+        <title>{title}</title>
+        <meta name="description" content={metadata.description ?? "Default Description"} />
+      </head>
+      <body className={`${inter.className} antialiased`}>
+        {isMobile ? <MobileNavbar /> : <DesktopNavbar />}
+        {children}
+      </body>
     </html>
   );
 }
