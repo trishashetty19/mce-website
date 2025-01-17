@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AlignJustify, X } from 'lucide-react';
 
 
 const MobileNavbar = () => {
@@ -13,20 +14,22 @@ const MobileNavbar = () => {
         onClick={toggleSidebar}
         className="menu-icon text-2xl focus:outline-none"
       >
-        ☰
+        <AlignJustify></AlignJustify>
+        
       </button>
 
       {/* Sidebar */}
       <div
-        className={`sidebar fixed top-0 right-0 w-2/3 h-full bg-white shadow-2xl z-50 p-6 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`sidebar fixed top-0 right-0 w-2/3 h-full bg-primary shadow-2xl z-100 p-6 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <button
           onClick={toggleSidebar}
-          className="close-button text-2xl mb-4 focus:outline-none"
+          className="close-button text-2xl mb-4 focus:outline-none text-primary-foreground cursor-pointer"
+          style={{pointerEvents: 'auto'}}
         >
-          ✕
+          <X className='w-6 h-6 '></X>
         </button>
-        <nav className="flex flex-col space-y-4 text-lg">
+        <nav className="flex flex-col space-y-4 text-lg text-primary-foreground">
           <a href="#home">Home</a>
           <a href="#courses">Courses</a>
           <a href="#iti">ITI</a>
