@@ -9,7 +9,7 @@ const MobileNavbar = () => {
 
   return (
     <div className="mobile-navbar flex justify-between items-center p-4 shadow-md">
-      <div className="logo text-xl font-bold">Logo</div>
+      <div className="logo flex"><img src='/logo.png' alt='Logo' className='h-10'></img></div>
       <button
         onClick={toggleSidebar}
         className="menu-icon text-2xl focus:outline-none"
@@ -27,7 +27,7 @@ const MobileNavbar = () => {
           className="close-button text-2xl mb-4 focus:outline-none text-primary-foreground cursor-pointer"
           style={{pointerEvents: 'auto'}}
         >
-          <X className='w-6 h-6 '></X>
+          <X className='w-7 h-7 '></X>
         </button>
         <nav className="flex flex-col space-y-4 text-lg text-primary-foreground">
           <a href="#home">Home</a>
