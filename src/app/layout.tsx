@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import DesktopNavbar from "./components/desktop-navbar";
 import MobileNavbar from "./components/mobile-navbar";
+import Footer from "./components/footer"
 import { useEffect, useState } from "react";
 import { metadata } from "./head";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         {isMobile ? <MobileNavbar /> : <DesktopNavbar />}
         {children}
+        <Footer/>
       </body>
     </html>
   );
