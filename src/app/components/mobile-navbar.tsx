@@ -30,12 +30,12 @@ const MobileNavbar = () => {
           <X className='w-7 h-7 '></X>
         </button>
         <nav className="flex flex-col space-y-4 text-lg text-primary-foreground">
-          <a href="#home">Home</a>
-          <a href="#courses">Courses</a>
-          <a href="#iti">ITI</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#about-us">About Us</a>
-          <a href="#contact-us">Contact Us</a>
+          <a href="#home" className='hover:text-secondary'>Home</a>
+          <a href="#courses" className='hover:text-secondary'>Courses</a>
+          <a href="#iti" className='hover:text-secondary'>ITI</a>
+          <a href="#gallery" className='hover:text-secondary'>Gallery</a>
+          <a href="#about-us" className='hover:text-secondary'>About Us</a>
+          <a href="#contact-us" className='hover:text-secondary'>Contact Us</a>
         </nav>
       </div>
     </div>
