@@ -8,7 +8,7 @@ const MobileNavbar = () => {
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   return (
-    <div className="mobile-navbar flex justify-between items-center p-4 shadow-md">
+    <div className="mobile-navbar flex justify-between items-center p-4 shadow-md z-10">
       <div className="logo flex"><img src='/logo.png' alt='Logo' className='h-10'></img></div>
       <button
         onClick={toggleSidebar}
@@ -20,7 +20,7 @@ const MobileNavbar = () => {
 
       {/* Sidebar */}
       <div
-        className={`sidebar fixed top-0 right-0 w-2/3 h-full bg-primary shadow-2xl z-100 p-6 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`sidebar fixed top-0 right-0 w-2/3 h-full bg-primary shadow-2xl z-50 p-6 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <button
           onClick={toggleSidebar}

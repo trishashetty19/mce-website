@@ -4,7 +4,7 @@ const DesktopNavbar = () => {
     return(
         <div className='desktop-navbar flex justify-between items-center p-3 shadow-lg'>
             <div className='Logo flex'><img src='/logo.png' alt='Logo' className='h-10'></img></div>
-            <nav className='flex space-x-7 text-sm'>
+            <nav className='flex space-x-7 text-sm font-bold'>
                 <a href = "#home">Home</a>
                 <a href = "#courses">Courses</a>
                 <a href = "#iti">ITI</a>
