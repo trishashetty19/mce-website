@@ -3,16 +3,16 @@
 import React, { useState, useEffect } from 'react';
 
 const page = () => {
-  // State for the carousel
+  
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
-    '/photo1.jpg', // Replace with your actual image paths
+    '/photo1.jpg', 
     '/photo2.jpg',
     '/photo3.jpg',
     '/photo4.jpg'
   ];
 
-  // Function to handle next/prev images
+  
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
@@ -23,20 +23,19 @@ const page = () => {
     );
   };
 
-  // Automatic image sliding every 2 seconds
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextImage();
-    }, 2000); // Change image every 2 seconds
+    }, 2000); // Change of image every 2 seconds
 
-    // Cleanup the interval when the component is unmounted
+    
     return () => clearInterval(intervalId);
   }, []);
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center">
 
-      {/* Logo and Background */}
       <div
         className="absolute top-0 left-0 w-full h-full bg-center bg-contain bg-no-repeat"
         style={{
@@ -125,7 +124,7 @@ const page = () => {
       </div>
 
       {/* About Us */}
-      <div className="w-full mt-10 md:mt-20 flex flex-col items-center px-10 text-center">
+      <div className="w-full mt-10 md:mt-10 flex flex-col items-center px-10 text-center">
         <h2 className="text-3xl font-bold text-primary mb-6">About Us</h2>
         <p className="text-lg text-secondary font-bold mb-6 max-w-3xl">
           At Manipal Computer Education (MCE), our mission is to empower individuals with the skills and knowledge needed to excel in the digital age.
