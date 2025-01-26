@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
+import { ChevronUp, ChevronDown } from 'lucide-react'; // Importing Lucide icons
 
 const page = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -10,7 +11,7 @@ const page = () => {
     '/photo1.jpg',
     '/photo2.jpg',
     '/photo3.jpg',
-    '/photo4.jpg'
+    '/photo4.jpg',
   ];
 
   const nextImage = () => {
@@ -31,9 +32,33 @@ const page = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  // FAQ Section State
+  const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setActiveFAQ(activeFAQ === index ? null : index);
+  };
+
+  const faqs = [
+
+    {
+      question: 'What courses do you offer?',
+      answer:
+        'We offer Computer Courses, ITI Courses, Fashion Designing, Spoken English, and more.',
+    },
+    {
+      question: 'Where are your branches located?',
+      answer: 'We have branches in Kaup and Padubidri.',
+    },
+    {
+      question: 'How can I enroll in a course?',
+      answer:
+        'You can contact us through our website or visit any of our branches to get more information and enroll.',
+    },
+  ];
+
   return (
     <div className="relative w-full flex flex-col items-center justify-center">
-
       {/* Background Logo */}
       <div
         className="absolute top-0 left-0 w-full h-full bg-center bg-contain bg-no-repeat"
@@ -57,21 +82,27 @@ const page = () => {
 
       {/* Two Cards Section */}
       <div className="relative w-full flex flex-col md:flex-row justify-center px-5 md:px-20 space-y-6 md:space-y-0 md:space-x-20 mt-40 md:mt-80">
-
         {/* Kaup and Padubidri Sections Card */}
         <Card className="w-full md:w-1/2 h-full p-10 bg-card border-2 border-secondary rounded-lg shadow-lg">
           <h3 className="text-2xl font-bold text-center mb-3 md:mb-6 text-primary">
             Our Branches
           </h3>
           <div className="flex flex-col md:flex-row h-full">
-
             {/* Kaup Section */}
             <div className="w-full md:w-1/2 p-6 mb-1 md:mb-0">
               <h3 className="text-xl font-bold mb-2 sm:mb-4 text-center">Kaup</h3>
-              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">Computer Courses</Button>
-              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">ITI Courses</Button>
-              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">Fashion Designing</Button>
-              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">Spoken English</Button>
+              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">
+                Computer Courses
+              </Button>
+              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">
+                ITI Courses
+              </Button>
+              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">
+                Fashion Designing
+              </Button>
+              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">
+                Spoken English
+              </Button>
             </div>
 
             {/* Divider */}
@@ -80,10 +111,18 @@ const page = () => {
             {/* Padubidri Section */}
             <div className="w-full md:w-1/2 p-6">
               <h3 className="text-xl font-bold mb-2 sm:mb-4 text-center">Padubidri</h3>
-              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">Computer Courses</Button>
-              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">ITI Courses</Button>
-              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">Fashion Designing</Button>
-              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">Spoken English</Button>
+              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">
+                Computer Courses
+              </Button>
+              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">
+                ITI Courses
+              </Button>
+              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">
+                Fashion Designing
+              </Button>
+              <Button className="w-full py-3 mb-2 rounded-lg bg-primary text-primary-foreground hover:bg-secondary hover:scale-110">
+                Spoken English
+              </Button>
             </div>
           </div>
         </Card>
@@ -91,7 +130,6 @@ const page = () => {
         {/* Image Carousel Card */}
         <Card className="w-full md:w-1/2 h-full bg-card border-2 border-secondary rounded-lg shadow-lg">
           <div className="relative w-full h-full rounded-lg overflow-hidden">
-
             {/* View More Button */}
             <Button
               onClick={() => {
@@ -140,11 +178,42 @@ const page = () => {
           onClick={() => {
             window.location.href = '#aboutus';
           }}
-          className="py-3 px-6 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-secondary transition-all"
+          className="py-3 px-6 text-sm sm:text-sm text-primary-foreground border-primary font-bold rounded-lg sm:px-3 sm:py-2 z-10 hover:bg-secondary hover:scale-105"
         >
           Learn More
         </Button>
       </div>
+
+      {/* FAQ Section */}
+      <div className="w-full mt-10 md:mt-16 flex flex-col items-center px-5 md:px-10 text-center mb-10"> 
+        <Card className="w-full md:w-3/4 p-10 bg-card border-2 px-5 border-secondary rounded-lg shadow-lg">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, index) => (
+            <div key={index} className="mb-4">
+              <div
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFAQ(index)}
+              >
+                <h3 className="text-md md:text-lg font-bold text-primary">{faq.question}</h3>
+                <Button
+                  className={`transform transition-all duration-300 ${activeFAQ === index ? 'rotate-180' : ''
+                    } p-3 rounded-full`} 
+                >
+                  {activeFAQ === index ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                </Button>
+              </div>
+
+              {/* Conditional rendering of answer */}
+              {activeFAQ === index && (
+                <p className="mt-3 text-secondary font-bold">{faq.answer}</p>
+              )}
+            </div>
+          ))}
+        </Card>
+      </div>
+
     </div>
   );
 };
